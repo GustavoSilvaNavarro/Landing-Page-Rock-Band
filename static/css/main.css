@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+/*EL FONT-FACE SOLO SE USA CUANDO TENGO O EH DESCARGADO LA FUENTE EN MI COMPUTADORA PERONAL Y LO DESEO USAR INDEPENDIENTE DE SI ESTA EN LINEA O NO*/
+@font-face{
+    font-family: "Booter - Zero Zero"; /*coloco el nombre de la nueva fuente*/
+    src: url('/static/Fonts/Booter - Zero Zero.woff') format("woff"),
+         url('/static/Fonts/Booter - Zero Zero.woff2') format('woff2'); /*coloco la direccion y el formato a leer, tengo varias fuentes ya que no todos los navegadores soportan todas las fuentes asi que le pongo multiples asi el navegador decide cual debe usar para funcionar*/
+    font-weight: normal;
+    font-style: normal; /*con esto puedo poner italica u oblicuas*/
+
+}
+
+* { /* el * es para decirle que es a todo el contenido*/
+    box-sizing: border-box; /*le digo a la propiedad que toda caja o div a a tener la misma altura y anchura*/
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Raleway', sans-serif;
+    color: #777;
+}
+.main-header {
+    background-color: rgba(0, 0, 0, 0.6); /*le doy un color a todo header de negro pero con 60% de transparencia*/
+    background-image: url("/static/Images/Header Background.jpg");
+    background-size: cover;
+    background-blend-mode: multiply; /*le digo que quiero que combiene la imagen de fondo con el color negro de fondo para que se mesclen*/
+    padding-bottom: 30px;
+}
+
+.nav li {
+    display: inline; /* coloco en linea los elemtnso que estan como columna*/
+    padding: 0 5%;
+}
+
+.nav a {
+    display: inline-block; /*el inline block me permite colocar los elementos de inline como bloques y es me permite agregar ciertas propiedades como paddign, alturas y demas*/
+    padding: .5em; /*le coloque padding de medio em pero solo coloca a la derecha e insquierda y no a todo como debe ser esto es debido a que puse la propiedad inline*/
+    color: white;
+    text-decoration: none; /*le quito el subrayado a los links*/
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3); /*color medio gris y le digo cuando pase el mouse pon el color de fondo con trsnaparencia de 30%*/
+}
+
+.main-nav {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: lighter; /*hace el grosor de mi fuente mas fino que lo normal*/
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.band-name {
+    text-align: center;
+    margin: 0; /*le pongo 0 ya que por defecto los h1 tienen un margen y se lo estoy quitando*/
+    font-size: 4em;
+    font-family: "Booter - Zero Zero";
+    font-weight: normal;
+    color: white
+}
+
+.band-name-large {
+    font-size: 7em;
+}
+
+.content-section {
+    margin: 1em;
+}
+
+.container {
+    max-width: 900px; /*seteo mi ancho maximo en 900 px*/
+    margin: 0 auto; /*lo que digo es margen de arriba y abajo es 0 y los costados es automatico es decir se va a ajstar para tener igual margen a ambos lados es decir centra el texto*/
+    padding: 0 1.5em;
+}
+
+.section-header {
+    font-family: 'Metal Mania', cursive;
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    font-size: 2.5em; /*lo va a hacer 2,5 veces mas grande que el original*/
+}
+
+.about-band-image {
+    float: left; /*Hago flotar la imagen a la izquierda*/
+    height: 200px;
+    width: 200px; /*les doy tamaño a la imagen*/
+    margin: 15px;
+    border-radius: 50%;
+}
+
+.main-footer{
+    background-color: #56CCF2;
+    color: white;
+    padding: 0.25em 0;
+}
+
+.main-footer-container{
+    display: flex;
+    align-items: center;
+}
+
+.main-footer-container ul{
+    flex-grow: 1; /*le digo que tome tanto espacio como sea posible*/
+    text-align: end;
+}
+
+.footer-nav li {
+    padding: 0 .5em;
+}
+
+.footer-nav img {
+    width: 40px;
+    height: 40px;
+}
+
+.btn {
+    text-align: center;
+    align-items: center;
+    padding: .67em;
+    cursor: pointer;
+}
+
+.btn-header {
+    margin: .5em 15% 2em 15%;
+    color: white;
+    border: 2px solid #2D9CDB;
+    background-color: rgba( 255, 255, 255, .1);
+    border-radius: 0;
+    font-size: 1.5em;
+    font-weight: lighter;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.btn-header:hover {
+    background-color: rgba( 255, 255, 255, 0.3);
+}
+
+.btn-play {
+    display: block; /*vuelvo al boton un bloque*/
+    margin: 0 auto; /*alineo a los costados del boton // pero los botones no son elementos bloque por lo que no lo va a poder centrar y lo mandara a la izquierda*/
+    color: #2D9CDB;
+    font-size: 4em;
+    border-radius: 50%; /*lo quiero hacer un circulo perfecto, pero como un boton tiene diferentes padding se vuelve un ovalo debo cancelar el paddig*/
+    padding: 0; /*aun se ve raro debo darle formato al circulo*/
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+.tour-row{
+    border-bottom: 1px solid black;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+/*PARA QUITAR EL ULTIMO BORDER DEL ULTIMO ELEMENTO SI TENER QUE CREAR OTRA CLASE SOLO PARA UN ELEMENTO HAGO LO SIGUIENTE*/
+.tour-row:last-child {
+    border-bottom: none; /*con esto le digo al ultimo elemento con esta clase quitale la linea*/
+}
+
+.tour-item {
+    display: inline-block; /*convierto mis elementos en linea en blockes en linea para poder agregarle propiedades como altura o anchura*/
+    padding-right: .5em;
+}
+
+.tour-date {
+    color: #555;
+    font-weight: bold;
+    width: 11%;
+}
+
+.tour-city {
+    width: 24%;
+}
+
+.tour-arena {
+    width: 42%;
+}
+
+.tour-btn {
+    max-width: 19%; /*pongo max ya que solo quiero que se agrande un 19% maximo independiente del tamaño de pagina*/
+}
+
+.btn-primary {
+    color: white;
+    background-color: #56CCF2;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #2d9cdb;
+}
+
+.shop-item {
+    margin: 30px;
+}
+
+.shop-item-title {
+    display: block;
+    width: 100%;
+    text-align: center; /*alinea horizontalmente*/
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.shop-item-image {
+    width: 250px;
+}
+
+.shop-item-details {
+    display: flex;
+    align-items: center; /*alinea verticalmente*/
+    padding: 5px;
+}
+
+.shop-item-price {
+    flex-grow: 1;
+    color: #333;
+}
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /*le coloca espacio a los csotados y da igual espaciado a todos los bloques dentro del flex*/
+}
+
+.cart-header {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-column {
+    display: flex; /*lo hago con el fin de poder tener como bloques felxibles los elementos en linea*/
+    align-items: center; /*alineo todos mis flex box*/
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+/*CON ESTO HAGO QUE SE ALINEEN COMO SI FUERA UNA TABLA*/
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+.cart-item-title {
+    color: #333;
+    margin-left: 0.5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto; /*le digo ajustate automaticamete con el width*/
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #eb5757;
+    border: none; /*remueve el border del boton para que no se vea feo*/
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #cc4c4c;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center; /*centro el conteido*/
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child { /*last child solo funciona en elementos dentro de un contenedor es decir un div mayo contiene varios cart-row con esta linea digo el ultimo elemento con clase cart row ese selecciono*/
+    border-bottom: 1px solid black; /*coloco una linea solida*/
+}
+
+.cart-row:last-child .cart-column {
+    border-bottom: none; /*le digo selecciona el ultimo elemento de clase cart-row y al colocarle la clase cart-column le digo a esa clase de ese ultimo elemtno de la clase row quitale el border botton*/
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block; /*con esto puedo usar propiedades de margin and stuff*/
+    margin: 40px auto 80px auto;
+    font-size: 1.75em; /*ASI AGRANDO EL BOTON*/
+}
